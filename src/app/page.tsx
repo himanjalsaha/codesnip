@@ -92,7 +92,7 @@ const page = () => {
             </div>
           </div>
           <div className="border border-gray-300 rounded-b-xl overflow-hidden">
-            <Image src={img} className="w-full h-auto shadow-lg shadow-black/50" />
+            <Image src={img} alt='ss' className="w-full h-auto shadow-lg shadow-black/50" />
           </div>
         </div>
       </div>
