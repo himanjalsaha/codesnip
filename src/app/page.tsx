@@ -1,113 +1,198 @@
-import Image from "next/image";
+import { BackgroundBeams } from '@/components/ui/Bacground-boxes'
+import { ContainerScroll } from '@/components/ui/container-scroll-animation'
+import React from 'react'
+import { cn } from '@/lib/utils'
+import { HiSparkles } from 'react-icons/hi2'
+import { PinContainer } from '@/components/ui/Threedpin'
+import Image from 'next/image'
+import img from '../app/assets/image2.png'
+import { PiSlidersHorizontalThin } from 'react-icons/pi'
+import { SlideTabsExample } from '@/components/ui/Tab'
+import { StickyScroll, WobbleCard } from '@/components/ui/Stickyscroll'
+import { FeaturesSectionDemo } from '@/components/ui/Feature'
+import { FlipWords } from '@/components/ui/Text'
 
-export default function Home() {
+const page = () => {
+  const words = ["organizing", "sharing", "documenting" ];
+  const content = [
+    {
+      title: "Collaborative Editing",
+      description:
+        "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+      content: (
+        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+          Collaborative Editing
+        </div>
+      ),
+    },
+    {
+      title: "Real-time Changes",
+      description:
+        "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+      content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+          <Image
+            src="/linear.webp"
+            width={300}
+            height={300}
+            className="h-full w-full object-cover"
+            alt="linear board demo"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Version Control",
+      description:
+        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      content: (
+        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+          Version Control
+        </div>
+      ),
+    },
+    {
+      title: "AI Integration",
+      description:
+        "Leverage the power of AI to enhance your code management. Our platform offers intelligent suggestions and automated features that streamline your workflow and boost productivity.",
+      content: (
+        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+          AI Integration
+        </div>
+      ),
+    },
+  ];
+  
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>   
+      <div className="h-screen p-10  relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <BackgroundBeams/>
+        <SlideTabsExample/>
+      <div className="text-center z-20">
+  <h1 className="text-4xl md:text-6xl font-bold text-white mt-4">
+    Manage Code Snippets Effortlessly with Code Snip
+  </h1>
+  <p className="text-lg md:text-2xl flex flex-row justify-center items-center text-gray-500 mt-2">
+    Your ultimate solution for organizing, sharing, and documenting code with AI{" "}
+    <HiSparkles className="text-[#6365EF] text-4xl md:text-xl " />
+
+    
+  </p>
+</div>
+        <div className="w-full md:w-[75%] h-96  md:h-[80%] z-20 p-5">
+          <div className="flex items-center justify-between rounded-t-xl bg-gray-200 py-2 px-4 border-t border-l border-r border-gray-300">
+            <div className="flex space-x-1">
+              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <div className="text-center flex-1">
+              <p className="text-gray-700 text-sm">Codesnip</p>
+            </div>
+          </div>
+          <div className="border border-gray-300 rounded-b-xl overflow-hidden">
+            <Image src={img} className="w-full h-auto shadow-lg shadow-black/50" />
+          </div>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+      <div>
+      <div className="flex flex-col bg-gradient-to-b from-[#10182B] to-[#6365EF]   overflow-hidden">
+      <ContainerScroll
+        titleComponent={
+          <>
+          <div className="h-[10rem] flex justify-center items-center px-4">
+      <div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
+      Your ultimate solution for
+        <FlipWords words={words} /> <br />
+        code with AI
+      </div>
+    </div>
+          </>
+        }
+      >
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={img}
+          alt="hero"
+          height={720}
+          width={1400}
+          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          draggable={false}
         />
+      </ContainerScroll>
+    </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="bg-[#6365EF] w-full">
+        <div className='bg-neutral-900 grid grid-cols-1 lg:grid-cols-3 gap-4 p-5 mx-auto w-full'>
+          <WobbleCard
+            containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]"
+            className=""
+          >
+            <div className="max-w-xs">
+              <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                Collaborative Editing
+              </h2>
+              <p className="mt-4 text-left text-base/6 text-neutral-200">
+                Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.
+              </p>
+            </div>
+            <Image
+              src={img}
+              width={500}
+              height={500}
+              alt="linear demo image"
+              className="absolute -right-4 lg:-right-[10%] grayscale filter -bottom-10 object-contain rounded-2xl"
+            />
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 min-h-[300px]">
+            <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+              Real-time Changes
+            </h2>
+            <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+              See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.
+            </p>
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+            <div className="max-w-sm">
+              <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                AI Integration
+              </h2>
+              <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+                Leverage the power of AI to enhance your code management. Our platform offers intelligent suggestions and automated features that streamline your workflow and boost productivity.
+              </p>
+            </div>
+            <Image
+              src={img}
+              width={500}
+              height={500}
+              alt="linear demo image"
+              className="absolute -right-10 md:-right-[10%] lg:-right-[10%] -bottom-10 object-contain rounded-2xl"
+            />
+          </WobbleCard>
+        </div>
       </div>
-    </main>
+      <FeaturesSectionDemo/>
+      <footer className="bg-black text-white py-6">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="mb-4 md:mb-0">
+        <p className="text-lg font-semibold">Code Snip</p>
+        <p className="text-sm mt-1">Your ultimate solution for organizing, sharing, and documenting code with AI</p>
+      </div>
+      <div className="flex space-x-4">
+        <a href="#" className="text-sm hover:text-gray-300">Terms of Service</a>
+        <a href="#" className="text-sm hover:text-gray-300">Privacy Policy</a>
+        <a href="#" className="text-sm hover:text-gray-300">Contact Us</a>
+      </div>
+    </div>
+    <div className="border-t border-gray-700 mt-4 pt-4 text-xs text-gray-400">
+      <p>&copy; 2024 Code Snip. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+    </>
   );
 }
+
+export default page;
