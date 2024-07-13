@@ -8,7 +8,7 @@ import Image from 'next/image'
 import img from '../app/assets/image2.png'
 import { PiSlidersHorizontalThin } from 'react-icons/pi'
 import { SlideTabsExample } from '@/components/ui/Tab'
-import { StickyScroll, WobbleCard } from '@/components/ui/Stickyscroll'
+import {  WobbleCard } from '@/components/ui/Stickyscroll'
 import { FeaturesSectionDemo } from '@/components/ui/Feature'
 import { FlipWords } from '@/components/ui/Text'
 
