@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const SlideTabsExample = () => {
   return (
-    <div className="z-20 fixed top-1">
+    <div className="z-20 fixed top-3 p-1">
       <SlideTabs />
     </div>
   );
