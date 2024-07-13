@@ -23,7 +23,7 @@ const Page = () => {
         <BackgroundBeams />
         <SlideTabsExample />
         <div className="text-center z-20">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mt-4">
+          <h1 className="text-4xl md:text-4xl font-bold text-white mt-4">
             Manage Code Snippets Effortlessly with Code Snip
           </h1>
           <p className="text-lg md:text-2xl flex flex-row justify-center items-center text-gray-500 mt-2">
